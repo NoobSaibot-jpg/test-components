@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Cards from './components/Cards';
+import img from './img.png'
 
 function App() {
+
+  const items = [
+    {
+      tittle: 'Tittle1',
+      img: {img},
+      key: '1'
+    },
+    {
+      tittle: 'Tittle2',
+      img: {img},
+      key: '2'
+    },
+    {
+      tittle: 'Tittle3',
+      img: {img},
+      key: '3'
+    }
+  ]
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="cards">
+        <div className="cards_wraper"> 
+          {items.map(i=><Cards tittle= {i.tittle} img={i.img.img}/>)}
+        </div>
+      </div>
+        
+      
     </div>
   );
 }

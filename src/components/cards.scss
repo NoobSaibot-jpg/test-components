@@ -1,0 +1,90 @@
+.cards{
+    background-color: aquamarine;
+    min-height: 100vh;
+    &_wraper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.2fr;
+        margin: 0 auto;
+        padding: 3rem;
+        height: 100%;
+        width: 100%;
+        @media screen and(max-width: 1066px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+        @media screen and(max-width: 710px) {
+            grid-template-columns: 1fr;
+        }
+        @media screen and(max-width: 376px) {
+            padding: 0.1rem;
+        }
+        
+    }
+    &_item{
+        align-self: center;
+        width: min-content;
+        height: fit-content;
+        margin: 1rem auto;
+        padding: .5rem;
+        background-color: #fff;
+        box-shadow: rgba(0, 0, 0, .3) 0px 0px 2px 2px ;
+        &_wraper{
+            min-width: 200px;
+            min-height: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        &_tittle{
+            font-size: 1.5rem;
+        }
+        &_img__wraper{
+            overflow: hidden;
+            min-height: 200px;
+            min-width: 300px;
+            img{
+                object-fit: contain;
+                display: block;
+                min-height: 200px;
+                min-width: 300px;
+                align-self: flex-start;
+                transition: all 0.3s;
+                &:hover{
+                    transform: scale(1.1);
+                }
+    
+            }
+        }
+        
+        &_body{
+            font-size: 1rem;
+            padding-top: 1em;
+            font-weight: 100;
+            transition: all 0.5s;
+            &__descr{
+                transition: display 0.3s;
+                .hide{
+                    display: none;
+                }
+                .show{
+                    display: block;
+                }
+            }
+            &_btn{
+                width: fit-content;
+                height: fit-content;
+                display: block;
+                border: none;
+                background-color: #fff;
+                color: blue;
+                cursor: pointer;
+                transition: all 0.5s;
+                &:hover{
+                    color: red;
+                }
+            }
+        }
+
+    }
+    
+}
